@@ -4076,6 +4076,15 @@ Push automatique après chaque outil.
 - [x] text-hash-lines : hash de chaque ligne (md5/sha1/sha256...), dedup, dup-check exit 2, JSON ✓ 2026-08-01
 - [x] env-sort : trie les clés d'un .env en préservant commentaires et groupes (--check, --in-place) ✓ 2026-08-01
 
+## Vague 581 — CLI Tools (JSON, tailles, CSV, env)
+- [x] env-strip-prefix : retire un préfixe des clés d'un .env (fixe ou --auto, export préservé, --check, JSON) ✓ 2026-08-03
+- [x] json-values-only : extrait chaque valeur scalaire d'un document JSON (chemins, --unique, --check exit 2, JSON) ✓ 2026-08-03
+- [x] text-random-case : casse aléatoire des lettres (seed reproductible, mode --alternate, JSON) ✓ 2026-08-03
+- [x] file-size-human : formate des octets en tailles lisibles (décimal/binaire, --parse inverse, --check exit 2, JSON) ✓ 2026-08-03
+- [x] csv-head-rows : garde les N premières lignes de données d'un CSV (header conservé, délimiteur auto, --check exit 2, JSON) ✓ 2026-08-03
+- [x] text-title-indent : ré-indente un Markdown selon le niveau des titres (step configurable, --check lignes orphelines exit 2, JSON) ✓ 2026-08-03
+- [x] env-strip-whitespace : normalise espaces autour clés/valeurs d'un .env (quotes préservées, --in-place, --check exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 580 — CLI Tools (env, texte, JSON)
 - [x] env-keys-only : liste les noms de variables d'un .env (export toléré, --strict exit 2, JSON) ✓ 2026-08-03
 - [x] line-dedup-keep-order : déduplique les lignes en préservant l'ordre des premières occurrences (ignore-case, --count, --check exit 2, JSON) ✓ 2026-08-03
