@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 585 — CLI Tools (JSON, CSV, texte, fichiers, env)
+- [ ] json-key-path-list : liste tous les chemins clés d'un JSON/JSONL (dot-paths, arrays [i], --leaves-only, --with-types, gates require-path/max-paths exit 2, JSON)
+- [ ] csv-column-swap : échange/ordonne des colonnes d'un CSV (--swap A B, --order liste partielle, --no-header, gates require-swapped/require-order exit 2, JSON)
+- [ ] text-blank-line-runs : détecte/plafonne les séries de lignes vides consécutives (--max N collapse, rapport offsets, gates require-no-runs/max-run exit 2, JSON)
+- [ ] file-newest-oldest : affiche le fichier le plus récent/ancien d'un arbre par mtime (--by ctime/mtime/size, --per-dir, gates max-age-days/require-single exit 2, JSON)
+- [ ] env-duplicate-key-report : détecte les clés dupliquées dans un/plusieurs .env (première vs dernière valeur, --fix keep-first/keep-last, gates require-none/max-dups exit 2, JSON)
+
+## Vague 584 — CLI Tools (texte, CSV, JSON, env, fichiers)
+- [x] text-replace-nth : remplace la Nième occurrence d'un motif (--nth N ou --last, regex, --ignore-case, gates require-replaced/require-match exit 2, JSON) ✓ 2026-08-03
+- [x] csv-first-nonblank-cell : extrait, pour chaque ligne, l'index et la valeur de la première cellule non-vide (délimiteur sniffé, --offset 1-based, gates require-all-filled/max-blank-rows exit 2, JSON) ✓ 2026-08-03
+- [x] json-depth-limit : tronque un JSON au-delà d'une profondeur N (remplace par null/…/--marker custom, JSONL, gates require-truncated/require-untouched exit 2, JSON) ✓ 2026-08-03
+- [x] env-unusual-chars-audit : détecte les caractères inhabituels dans un .env (non-ASCII, contrôles, espaces cachés dans clés/valeurs, --fix-strip, gates require-clean exit 2, JSON) ✓ 2026-08-03
+- [x] text-byte-frequency : histogramme des octets d'un fichier/données (top-N, classes printable/whitespace/high/control, --per-4k, gates max-distinct/require-ascii exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 583 — CLI Tools (JSON, fichiers, env, texte)
 - [x] json-numeric-clamp : borne les valeurs numériques d'un JSON/JSONL entre --min et --max (--path avec *, --ndigits, modes clamp/wrap/bounce, gates require-clamped/require-unchanged exit 2, JSON) ✓ 2026-08-03
 - [x] file-name-slug-check : vérifie que les noms de fichiers d'un arbre sont des slugs (lowercase, chiffres, tirets) et propose la forme canonique (--fix renomme, --dry-run, --allow, gates require-clean/max-violations exit 2, JSON) ✓ 2026-08-03
