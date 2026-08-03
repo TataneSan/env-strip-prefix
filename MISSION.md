@@ -1,5 +1,14 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 586 — CLI Tools (texte, CSV, JSON, env, URL)
+- [x] text-levenshtein : distance de Levenshtein et similarité entre chaînes ou lignes de fichiers (--ops, --ratio, modes -f/--each, gates max-distance/require-similarity exit 2, JSON) ✓ 2026-08-03
+- [x] csv-join-columns : join une CSV lookup sur des colonnes clés (left/inner, --on, --columns, sniff délimiteurs, gates require-matched/max-inner-drops exit 2, JSON) ✓ 2026-08-03
+- [x] env-from-json : aplatit un JSON en lignes KEY=VALUE pour .env (--prefix, --sep, --export, gates max-keys/require-key exit 2, JSON) ✓ 2026-08-03
+- [x] json-filter-keys : filtre les clés d'un JSON par glob en profondeur (--keep/--drop, JSONL, gates require-removed/require-unchanged exit 2, JSON) ✓ 2026-08-03
+- [x] text-smart-quotes : convertit guillemets droits en typographiques (préserve code spans/blocs, --to-straight, gates require-converted/require-unchanged exit 2, JSON) ✓ 2026-08-03
+- [x] url-query-parse : parse query strings/URLs en JSON (duplicates as arrays, blank values, gates require-param/max-params exit 2) ✓ 2026-08-03
+- [x] text-diacritics-remove : retire les diacritiques via NFKD (--keep chars, gates require-changed/require-unchanged exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 585 — CLI Tools (JSON, CSV, texte, fichiers, env)
 - [x] json-key-path-list : liste tous les chemins clés d'un JSON/JSONL (dot-paths, arrays [i], --leaves-only, --with-types, gates require-path/max-paths exit 2, JSON) ✓ 2026-08-03
 - [x] csv-column-swap : échange/ordonne des colonnes d'un CSV (--swap A B, --order liste partielle, --no-header, gates require-swapped/require-order exit 2, JSON) ✓ 2026-08-03
