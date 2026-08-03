@@ -1,5 +1,14 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 587 — CLI Tools (texte, env, JSON, Markdown)
+- [x] text-pangram-check : vérifie si un texte est un pangramme (NFKD, lettres manquantes, --check exit 2, require-letter-count, JSON) ✓ 2026-08-03
+- [x] text-anchor-distance : distance de chaque ligne à l'ancre précédente/suivante (regex/fixed, TSV, gates max-distance/require-anchor exit 2, JSON) ✓ 2026-08-03
+- [x] env-shell-expand : expansion $VAR, ${VAR:-def}, ${VAR:=def}, ${VAR:?err} dans un .env (in-file refs, --require-resolved, JSON) ✓ 2026-08-03
+- [x] json-narrow-types : normalise types numériques/booléens d'un JSON (1.0→1, "true"→true, gates require-changed/require-unchanged exit 2, JSON) ✓ 2026-08-03
+- [x] markdown-toc-build : génère un TOC GitHub-compatible depuis les titres ATX (slugs, fences ignorés, min/max-level, --check slugs dup exit 2, JSON) ✓ 2026-08-03
+- [x] text-pair-diff : compare des paires de lignes de deux fichiers avec ratio difflib (seuil, gates require-match/max-different exit 2, JSON) ✓ 2026-08-03
+- [x] env-secret-audit : détecte secrets fuités dans un .env (AWS/GitHub/Slack, entropie Shannon, --require-clean exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 586 — CLI Tools (texte, CSV, JSON, env, URL)
 - [x] text-levenshtein : distance de Levenshtein et similarité entre chaînes ou lignes de fichiers (--ops, --ratio, modes -f/--each, gates max-distance/require-similarity exit 2, JSON) ✓ 2026-08-03
 - [x] csv-join-columns : join une CSV lookup sur des colonnes clés (left/inner, --on, --columns, sniff délimiteurs, gates require-matched/max-inner-drops exit 2, JSON) ✓ 2026-08-03
