@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 582 — CLI Tools (CSV, texte, JSON, fichiers, env)
+- [x] csv-final-newline-check : vérifie qu'un CSV se termine par une newline et nettoie les lignes vides finales (--fix, --fix-blank-tail, délimiteur sniffé, --require-newline exit 2, JSON) ✓ 2026-08-03
+- [x] text-word-count-per-line : affiche <ligne>: <N mots> pour chaque ligne (--sum, --delim regex, barres ASCII, --min/--max gates exit 2, JSON) ✓ 2026-08-03
+- [x] json-swap-key-order : réordonne les clés des objets JSON selon une liste (--keys, reste en place ou --sort-rest, --at-path, JSONL, --check/--require-reorders exit 2, JSON) ✓ 2026-08-03
+- [x] file-bom-scan : détecte les BOM (UTF-8/16-LE/16-BE/32) dans les fichiers d'un arbre (--extensions, --strip/-all avec --dry-run, --require-none exit 2, JSON) ✓ 2026-08-03
+- [x] env-empty-value-report : détecte les clés .env avec valeur vide ou manquante (=, sans =, quotes, commentaire inline, --require-none exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 579 — CLI Tools (rapport indentation mixte, CSV numéro de ligne d'une valeur, JSON pretty/compact toggle, compter segments d'URL, .env valeurs partagées)
 - [x] text-mixed-indent-report : détecte l'indentation tabs/espaces/mixte (per-file, sample lignes, --fix tab|space avec --tab-width, gate --style, --json) ✓ 2026-08-03
 - [x] csv-row-number-of-value : numéro(s) de ligne d'une valeur dans un CSV (--column nom/index, --first/--last/--all, --contains/--regex, --require-absent, --json) ✓ 2026-08-03
