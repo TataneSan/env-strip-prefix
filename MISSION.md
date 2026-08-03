@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 583 — CLI Tools (JSON, fichiers, env, texte)
+- [x] json-numeric-clamp : borne les valeurs numériques d'un JSON/JSONL entre --min et --max (--path avec *, --ndigits, modes clamp/wrap/bounce, gates require-clamped/require-unchanged exit 2, JSON) ✓ 2026-08-03
+- [x] file-name-slug-check : vérifie que les noms de fichiers d'un arbre sont des slugs (lowercase, chiffres, tirets) et propose la forme canonique (--fix renomme, --dry-run, --allow, gates require-clean/max-violations exit 2, JSON) ✓ 2026-08-03
+- [x] env-cascade-layers : empile des .env par couches avec priorité last-wins (ou first-wins), affiche qui définit chaque clé (--show-source, --only-overridden, gates require-key/require-no-override exit 2, JSON) ✓ 2026-08-03
+- [x] text-line-hash-dedup : déduplique les lignes par hash tout en conservant l'ordre relatif (hash md5/sha256, --invert garde les doublons, --count occurrences, gates require-duplicates/require-none exit 2, JSON) ✓ 2026-08-03
+- [x] json-array-rotate : décale circulairement les éléments d'un array JSON (--by N positif/négatif, chemin d'array(s), JSONL, gates require-rotated/require-unchanged exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 582 — CLI Tools (CSV, texte, JSON, fichiers, env)
 - [x] csv-final-newline-check : vérifie qu'un CSV se termine par une newline et nettoie les lignes vides finales (--fix, --fix-blank-tail, délimiteur sniffé, --require-newline exit 2, JSON) ✓ 2026-08-03
 - [x] text-word-count-per-line : affiche <ligne>: <N mots> pour chaque ligne (--sum, --delim regex, barres ASCII, --min/--max gates exit 2, JSON) ✓ 2026-08-03
