@@ -1,5 +1,16 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 588 — CLI Tools (JSON, CSV, Markdown, texte, fichiers)
+- [x] json-flatten-unflatten : aplati/ré-imbrique un JSON en clés a.b[i].c (sep custom, --unflatten, gates require-flattened/require-unchanged exit 2, JSON) ✓ 2026-08-03
+- [x] csv-null-stats : statistiques null/NA/vide par colonne et par ligne d'un CSV (delimiter sniffé, gates max-null-rate/require-row-complete exit 2, JSON) ✓ 2026-08-03
+- [x] markdown-refs-validate : valide que les références [text][ref] résolvent toutes en [ref]: url (fences ignorés, --strict, exit 2 sur broken, JSON) ✓ 2026-08-03
+- [x] text-unicode-names : rapporte codepoint + nom Unicode de chaque caractère (détecte zero-width/bidi/BOM, gates require-ascii/require-no-unusual exit 2, JSON) ✓ 2026-08-03
+- [x] gitignore-lint : lint un .gitignore (doublons, espaces, backslashes, --require-clean exit 2, JSON) ✓ 2026-08-03
+- [x] markdown-def-list : extrait les listes de définitions Markdown (term : def, formats pretty/json/tsv/html, gates require-min/require-none exit 2) ✓ 2026-08-03
+- [x] markdown-image-audit : audit images Markdown (alt placeholder, refs non résolues, fichiers locaux manquants, --root, gates require-alt/require-local-exist exit 2, JSON) ✓ 2026-08-03
+- [x] text-sorted-unique-words : extrait mots uniques triés (counts, min-length, --match/--exclude, gates min-words/require-duplicate-free exit 2, JSON) ✓ 2026-08-03
+- [x] file-line-endings : détecte/normalise LF/CRLF/CR/mixed par fichier (--normalize, --in-place, gates require-lf/require-crlf exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 587 — CLI Tools (texte, env, JSON, Markdown)
 - [x] text-pangram-check : vérifie si un texte est un pangramme (NFKD, lettres manquantes, --check exit 2, require-letter-count, JSON) ✓ 2026-08-03
 - [x] text-anchor-distance : distance de chaque ligne à l'ancre précédente/suivante (regex/fixed, TSV, gates max-distance/require-anchor exit 2, JSON) ✓ 2026-08-03
